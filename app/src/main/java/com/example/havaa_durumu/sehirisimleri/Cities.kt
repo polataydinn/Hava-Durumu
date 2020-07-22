@@ -19,7 +19,7 @@ class Cities {
         this.onSuccess = os
     }
 
-    fun getCitiesName(): ArrayList<CitiesResponse.Item> {
+    fun getCitiesName() {
 
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -29,7 +29,6 @@ class Cities {
             val service = retrofit.create(ApiService::class.java)
             val call = service.guncelSehirIsimleriData()
             var res : ArrayList<CitiesResponse.Item> = ArrayList()
-            var flag = true
 
 
             call.enqueue(object : Callback<CitiesResponse> {
@@ -40,21 +39,14 @@ class Cities {
                        res.add(cities!!.get(i))
 
                     }
-                   flag = false
-
+                    onSuccess?.execute(res)
 
                 }
-
                 override fun onFailure(call: Call<CitiesResponse>, t: Throwable) {
                         sehirData!!.text = t.message
                 }
-
             })
-            //TODO: refactor it with nice solution..
-            while (flag){
 
-            }
-            return res
         }
 
 }

@@ -4,10 +4,12 @@ package com.example.havaa_durumu
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.havaa_durumu.iml.OnSuccess
 import com.example.havadurumuv10.sehirisimleri.Cities
 
 class MainActivity : AppCompatActivity() {
@@ -33,28 +35,22 @@ class MainActivity : AppCompatActivity() {
     private fun callCities() {
 
 
-            var t1: Thread = Thread(Runnable {
-            var cityNames = Cities()
-            var res = cityNames.getCitiesName()
-            Log.d("CEVAP 2", res.toString())
-            mItemList = res
-            runOnUiThread(Runnable {
-                rView.adapter = CityAdaptor(mItemList)
+        var cityNames = Cities()
 
-
-            })
-           //
+        cityNames.setOnSuc(object : OnSuccess {
+            override fun execute(items: ArrayList<CitiesResponse.Item>) {
+                rView.adapter = CityAdaptor(items)
+            }
         })
 
-        t1.start()
+        cityNames.getCitiesName()
+
+
+
+
+
 
     }
-
-
-
-
-
-
 
 
     private fun exampleItemList(): ArrayList<CitiesResponse.Item> {
