@@ -1,5 +1,6 @@
 package com.example.havaa_durumu
 
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,13 +10,14 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.havadurumuv10.havadurumubilgisi.DataManager
+
 
 
 class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
     RecyclerView.Adapter<CityAdaptor.MyCityHolder>() {
 
     var mCityList = cityList
+
 
 
     override fun onBindViewHolder(holder: MyCityHolder, position: Int) {
@@ -26,15 +28,20 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
         val tView: TextView = view.findViewById(R.id.text)
         val rLay: RelativeLayout = view.findViewById(R.id.relative)
         var rWeather: String? = null
+        var mContext : Context? = null
+
+        fun setContext(c:Context){
+            this.mContext = c
+        }
 
         init {
             rLay.setOnClickListener(View.OnClickListener {
-                DataManager.dataAl(tView.text.toString())
+
                 Log.d("CEVAP ", "selam ben " + tView.text.toString())
                 Const.CURRENT_CITY = tView.text.toString()
 
-              //  val intent = Intent(this,show_weather::class.java)
-                //startActivity(intent)
+                val intent = Intent(mContext,show_weather::class.java)
+                startActivity(mContext!!,intent,null)
 
             })
         }
@@ -55,7 +62,9 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyCityHolder {
         var view: View = LayoutInflater.from(parent.context).inflate(R.layout.city, parent, false)
-        return MyCityHolder(view)
+        var cityHolder = MyCityHolder(view)
+        cityHolder.setContext(parent.context)
+        return cityHolder
     }
 
     override fun getItemCount(): Int {

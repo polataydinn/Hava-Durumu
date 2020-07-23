@@ -4,6 +4,7 @@ import android.util.Log
 import android.widget.TextView
 import com.example.havaa_durumu.Const
 import com.example.havaa_durumu.iml.OnSuccess
+import com.example.havaa_durumu.iml.WeatherListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,12 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DataManager {
 
-    var havaDurumuData: TextView? = null
-    var newReturnWeather: String? = null
-    var onSuccess: OnSuccess? = null
 
-    fun setOnSuc(os:OnSuccess){
-        this.onSuccess = os
+    var newReturnWeather: String? = null
+    var wh: WeatherListener? = null
+
+    fun setWeatherListener(weatherListener: WeatherListener){
+        this.wh = weatherListener
     }
 
     fun dataAl(newLocation: String) {
@@ -45,8 +46,19 @@ class DataManager {
                     Log.d("Cevap : ", _havaDurumuResponse.toString())
 
                     val stringBuilder =
-                        "Tarih: " +
-                                _havaDurumuResponse?.result[1].date +
+                        "    Bugün" + "\n" +
+                                "Şehir: " +
+                                _havaDurumuResponse?.city +
+                                "\n" +
+                                "Sıcaklık: " +
+                                _havaDurumuResponse?.result[0].degree +
+                                "\n" +
+                                "Sıcaklık(Min): " +
+                                _havaDurumuResponse?.result[0].min +
+                                "\n" +
+                                "Sıcaklık(Max): " +
+                                _havaDurumuResponse?.result[0].max +
+                                "\n \n \n \n"  +        "    Yarın" +
                                 "\n" +
                                 "Şehir: " +
                                 _havaDurumuResponse?.city +
@@ -61,14 +73,13 @@ class DataManager {
                                 _havaDurumuResponse?.result[1].max +
                                 "\n"
 
-                    havaDurumuData!!.text = stringBuilder
-
+                    wh?.execute(stringBuilder.toString())
 
                 }
             }
 
             override fun onFailure(call: Call<havaDurumuResponse>, t: Throwable) {
-                havaDurumuData!!.text = t.message
+
             }
         })
 
