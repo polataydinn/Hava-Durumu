@@ -2,7 +2,7 @@ package com.example.havadurumuv10.havadurumubilgisi
 
 import com.google.gson.annotations.SerializedName
 
-data class havaDurumuResponse(
+data class weatherResponse(
     @SerializedName("city")
     val city: String,
     @SerializedName("result")
