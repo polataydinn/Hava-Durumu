@@ -16,7 +16,7 @@ class weatherDataManager {
     var newReturnWeather: String? = null
     var wh: WeatherListener? = null
 
-    fun setWeatherListener(weatherListener: WeatherListener){
+    fun setWeatherListener(weatherListener: WeatherListener) {
         this.wh = weatherListener
     }
 
@@ -36,7 +36,11 @@ class weatherDataManager {
                 call: Call<weatherResponse>,
                 response: Response<weatherResponse>
             ) {
-                newReturnWeather = response.body()!!.toString()
+                newReturnWeather = response.body()!!.result[0].icon
+                Const.CURRENT_STATUS = response.body()!!.result[0].status
+                Const.TOMORROW_STATUS = response.body()!!.result[1].status
+                Log.d("CEVAP ", "status : "+ Const.CURRENT_STATUS)
+
                 if (response.code() == 200) {
                     val _weatherResponse = response.body()!!
                     Log.d("Cevap : ", _weatherResponse.toString())
@@ -54,7 +58,7 @@ class weatherDataManager {
                                 "\n" +
                                 "Sıcaklık(Max): " +
                                 _weatherResponse?.result[0].max +
-                                "\n \n \n \n"  +        "    Yarın" +
+                                "\n \n \n \n" + "    Yarın" +
                                 "\n" +
                                 "Şehir: " +
                                 _weatherResponse?.city +
@@ -69,6 +73,7 @@ class weatherDataManager {
                                 _weatherResponse?.result[1].max +
                                 "\n"
 
+
                     wh?.execute(stringBuilder.toString())
 
                 }
@@ -80,5 +85,4 @@ class weatherDataManager {
         })
 
     }
-
 }
