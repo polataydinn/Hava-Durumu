@@ -39,6 +39,7 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
 
                 Log.d("CEVAP ", "selam ben " + tView.text.toString())
                 Const.CURRENT_CITY = tView.text.toString()
+                Const.SWITCH_CASE = 0
 
                 val intent = Intent(mContext,show_weather::class.java)
                 startActivity(mContext!!,intent,null)

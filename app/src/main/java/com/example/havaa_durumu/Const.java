@@ -7,6 +7,13 @@ public abstract class Const {
     public static String CURRENT_CITY;
     public static String CURRENT_STATUS;
     public static String TOMORROW_STATUS;
+    public static String DAYS_OF_WEEK1;
+    public static String DAYS_OF_WEEK2;
+    public static String DAYS_OF_WEEK3;
+    public static String DAYS_OF_WEEK4;
+    public static String DAYS_OF_WEEK5;
+    public static String DAYS_OF_WEEK6;
+    public static int SWITCH_CASE = 0;
     public static String CLOUDS = "Clouds";
     public static String CLEAR = "Clear";
     public static String RAIN = "Rain";

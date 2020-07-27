@@ -39,43 +39,95 @@ class weatherDataManager {
                 newReturnWeather = response.body()!!.result[0].icon
                 Const.CURRENT_STATUS = response.body()!!.result[0].status
                 Const.TOMORROW_STATUS = response.body()!!.result[1].status
-                Log.d("CEVAP ", "status : "+ Const.CURRENT_STATUS)
+                Const.DAYS_OF_WEEK1 = response.body()!!.result[1].day
+                Const.DAYS_OF_WEEK2 = response.body()!!.result[2].day
+                Const.DAYS_OF_WEEK3 = response.body()!!.result[3].day
+                Const.DAYS_OF_WEEK4 = response.body()!!.result[4].day
+                Const.DAYS_OF_WEEK5 = response.body()!!.result[5].day
+                Const.DAYS_OF_WEEK6 = response.body()!!.result[6].day
+                Log.d("CEVAP ", "status : " + Const.CURRENT_STATUS)
 
                 if (response.code() == 200) {
                     val _weatherResponse = response.body()!!
                     Log.d("Cevap : ", _weatherResponse.toString())
 
-                    val stringBuilder =
-                        "    Bugün" + "\n" +
-                                "Şehir: " +
-                                _weatherResponse?.city +
-                                "\n" +
-                                "Sıcaklık: " +
-                                _weatherResponse?.result[0].degree +
-                                "\n" +
-                                "Sıcaklık(Min): " +
-                                _weatherResponse?.result[0].min +
-                                "\n" +
-                                "Sıcaklık(Max): " +
-                                _weatherResponse?.result[0].max +
-                                "\n \n \n \n" + "    Yarın" +
-                                "\n" +
-                                "Şehir: " +
-                                _weatherResponse?.city +
-                                "\n" +
-                                "Sıcaklık: " +
-                                _weatherResponse?.result[1].degree +
-                                "\n" +
-                                "Sıcaklık(Min): " +
-                                _weatherResponse?.result[1].min +
-                                "\n" +
-                                "Sıcaklık(Max): " +
-                                _weatherResponse?.result[1].max +
-                                "\n"
+                    if(Const.SWITCH_CASE == 0){
+                     val stringBuilder =
+                         "Bugün" + "\n" +
+                                 _weatherResponse?.city +
+                                 "\n" +
+                                 "Sıcaklık: " +
+                                   _weatherResponse?.result[0].degree +
+                                   "\n"
+                       wh?.execute(stringBuilder.toString())
 
+                    }
+                    if(Const.SWITCH_CASE == 1){
+                        val stringBuilder1 =
+                            _weatherResponse.result[1].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[1].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder1.toString())
 
-                    wh?.execute(stringBuilder.toString())
+                    }
+                    if(Const.SWITCH_CASE == 2){
+                        val stringBuilder2 =
+                            _weatherResponse.result[2].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[2].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder2.toString())
 
+                    }
+                    if(Const.SWITCH_CASE == 3){
+                        val stringBuilder3 =
+                            _weatherResponse.result[3].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[3].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder3.toString())
+
+                    }
+                    if(Const.SWITCH_CASE == 4){
+                        val stringBuilder4 =
+                            _weatherResponse.result[4].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[4].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder4.toString())
+
+                    }
+                    if(Const.SWITCH_CASE == 5){
+                        val stringBuilder5 =
+                            _weatherResponse.result[5].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[5].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder5.toString())
+
+                    }
+                    if(Const.SWITCH_CASE == 6){
+                        val stringBuilder6 =
+                            _weatherResponse.result[6].day + "\n" +
+                                    _weatherResponse?.city +
+                                    "\n" +
+                                    "Sıcaklık: " +
+                                    _weatherResponse?.result[6].degree +
+                                    "\n"
+                        wh?.execute(stringBuilder6.toString())
+
+                    }
                 }
             }
 
