@@ -5,7 +5,10 @@ import java.util.HashMap;
 public abstract class Const {
     public static final String BASE_URL = "https://api.collectapi.com/";
     public static String CURRENT_CITY;
+    public static Double LATITUTE;
+    public static Double LONGITUTE;
     public static String CURRENT_STATUS;
+    public static String CURRENT_WEATHER;
     public static String TOMORROW_STATUS;
     public static String DAYS_OF_WEEK1;
     public static String DAYS_OF_WEEK2;

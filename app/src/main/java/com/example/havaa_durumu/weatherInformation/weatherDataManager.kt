@@ -39,6 +39,7 @@ class weatherDataManager {
                 newReturnWeather = response.body()!!.result[0].icon
                 Const.CURRENT_STATUS = response.body()!!.result[0].status
                 Const.TOMORROW_STATUS = response.body()!!.result[1].status
+                Const.CURRENT_WEATHER = response.body()!!.result[0].degree
                 Const.DAYS_OF_WEEK1 = response.body()!!.result[1].day
                 Const.DAYS_OF_WEEK2 = response.body()!!.result[2].day
                 Const.DAYS_OF_WEEK3 = response.body()!!.result[3].day

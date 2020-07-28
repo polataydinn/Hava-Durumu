@@ -10,7 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-
+import com.example.havadurumuv10.sehirisimleri.Cities
 
 
 class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
@@ -22,6 +22,7 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
 
     override fun onBindViewHolder(holder: MyCityHolder, position: Int) {
         holder.changeText(mCityList.get(position).name)
+        holder.setLatLon(mCityList.get(position).latitude.toDouble(),mCityList.get(position).longitude.toDouble())
     }
 
     class MyCityHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -29,6 +30,8 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
         val rLay: RelativeLayout = view.findViewById(R.id.relative)
         var rWeather: String? = null
         var mContext : Context? = null
+        var mLat: Double? = null
+        var mLon: Double? = null
 
         fun setContext(c:Context){
             this.mContext = c
@@ -38,8 +41,11 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
             rLay.setOnClickListener(View.OnClickListener {
 
                 Log.d("CEVAP ", "selam ben " + tView.text.toString())
+
                 Const.CURRENT_CITY = tView.text.toString()
                 Const.SWITCH_CASE = 0
+                Const.LATITUTE = this.mLat!!
+                Const.LONGITUTE= this.mLon!!
 
                 val intent = Intent(mContext,show_weather::class.java)
                 startActivity(mContext!!,intent,null)
@@ -51,6 +57,11 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
 
         fun changeText(text: String) {
             tView.setText(text)
+        }
+
+        fun setLatLon(lat:Double,lon:Double){
+            this.mLat = lat
+            this.mLon = lon
         }
 
         fun changeAcitivity(): Boolean {

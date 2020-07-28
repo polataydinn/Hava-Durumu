@@ -1,5 +1,6 @@
 package com.example.havaa_durumu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Debug
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.havaa_durumu.iml.WeatherListener
 import com.example.havadurumuv10.havadurumubilgisi.weatherDataManager
@@ -28,6 +30,7 @@ class show_weather : AppCompatActivity() {
         var button4: Button? = null
         var button5: Button? = null
         var button6: Button? = null
+        var mapButton: Button? = null
         button = findViewById(R.id.dButton1)
         button1 = findViewById(R.id.dButton2)
         button2 = findViewById(R.id.dButton3)
@@ -35,6 +38,7 @@ class show_weather : AppCompatActivity() {
         button4 = findViewById(R.id.dButton5)
         button5 = findViewById(R.id.dButton6)
         button6 = findViewById(R.id.dButton7)
+        mapButton = findViewById(R.id.mapButton)
 
         if(Const.SWITCH_CASE == 0) {getDataStart()}
         button.setText("Bugün")
@@ -72,6 +76,11 @@ class show_weather : AppCompatActivity() {
         button6.setOnClickListener {
             Const.SWITCH_CASE = 6
             getDataClone()
+        }
+
+        mapButton.setOnClickListener{
+            val intent = Intent(this,MapActivity::class.java)
+            startActivity(intent)
         }
 
 
