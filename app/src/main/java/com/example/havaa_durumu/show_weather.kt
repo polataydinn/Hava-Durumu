@@ -3,80 +3,25 @@ package com.example.havaa_durumu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Debug
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.havaa_durumu.iml.WeatherListener
 import com.example.havadurumuv10.havadurumubilgisi.weatherDataManager
 import kotlinx.android.synthetic.main.activity_show_weather.*
-import java.util.concurrent.TimeUnit
-import kotlin.math.log
+
 
 class show_weather : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_weather)
-        var dm = weatherDataManager()
         var button: Button? = null
-        var button1: Button? = null
-        var button2: Button? = null
-        var button3: Button? = null
-        var button4: Button? = null
-        var button5: Button? = null
-        var button6: Button? = null
         var mapButton: Button? = null
         button = findViewById(R.id.dButton1)
-        button1 = findViewById(R.id.dButton2)
-        button2 = findViewById(R.id.dButton3)
-        button3 = findViewById(R.id.dButton4)
-        button4 = findViewById(R.id.dButton5)
-        button5 = findViewById(R.id.dButton6)
-        button6 = findViewById(R.id.dButton7)
         mapButton = findViewById(R.id.mapButton)
 
         if(Const.SWITCH_CASE == 0) {getDataStart()}
-        button.setText("Bugün")
-        button.setOnClickListener {
-            Const.SWITCH_CASE = 0
-            getDataClone()
-        }
-
-
-        button1.setOnClickListener {
-            Const.SWITCH_CASE = 1
-            getDataClone()
-        }
-
-        button2.setOnClickListener {
-            Const.SWITCH_CASE = 2
-            getDataClone()
-        }
-
-        button3.setOnClickListener {
-            Const.SWITCH_CASE = 3
-            getDataClone()
-        }
-
-        button4.setOnClickListener {
-            Const.SWITCH_CASE = 4
-            getDataClone()
-        }
-
-        button5.setOnClickListener {
-            Const.SWITCH_CASE = 5
-            getDataClone()
-        }
-
-        button6.setOnClickListener {
-            Const.SWITCH_CASE = 6
-            getDataClone()
-        }
 
         mapButton.setOnClickListener{
             val intent = Intent(this,MapActivity::class.java)
@@ -125,6 +70,11 @@ fun getDataStart(){
         })
 
         dm.getData(Const.CURRENT_CITY)
+    }
+
+    fun DayChooseOnClick(view: View) {
+        Const.SWITCH_CASE = view.tag.toString().toInt() -1
+        getDataClone()
     }
 
 

@@ -36,6 +36,8 @@
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
+        android:onClick="DayChooseOnClick"
+        android:tag="1"
         android:text="Bugün"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -43,7 +45,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
+        android:tag="2"
         android:id="@+id/dButton2"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -54,7 +58,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dButton1" />
 
     <Button
+        android:tag="3"
         android:id="@+id/dButton3"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -65,7 +71,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dButton2" />
 
     <Button
+        android:tag="4"
         android:id="@+id/dButton4"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -76,7 +84,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dButton3" />
 
     <Button
+        android:tag="5"
         android:id="@+id/dButton5"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -87,7 +97,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dButton4" />
 
     <Button
+        android:tag="6"
         android:id="@+id/dButton7"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
@@ -98,7 +110,9 @@
         app:layout_constraintTop_toBottomOf="@+id/dButton6" />
 
     <Button
+        android:tag="7"
         android:id="@+id/dButton6"
+        android:onClick="DayChooseOnClick"
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"

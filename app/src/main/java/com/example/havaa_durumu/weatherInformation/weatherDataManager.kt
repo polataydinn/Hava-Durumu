@@ -1,6 +1,5 @@
 package com.example.havadurumuv10.havadurumubilgisi
 
-import android.util.Log
 import com.example.havaa_durumu.Const
 import com.example.havaa_durumu.iml.WeatherListener
 import retrofit2.Call
@@ -46,11 +45,9 @@ class weatherDataManager {
                 Const.DAYS_OF_WEEK4 = response.body()!!.result[4].day
                 Const.DAYS_OF_WEEK5 = response.body()!!.result[5].day
                 Const.DAYS_OF_WEEK6 = response.body()!!.result[6].day
-                Log.d("CEVAP ", "status : " + Const.CURRENT_STATUS)
 
                 if (response.code() == 200) {
                     val _weatherResponse = response.body()!!
-                    Log.d("Cevap : ", _weatherResponse.toString())
 
                     if(Const.SWITCH_CASE == 0){
                      val stringBuilder =
@@ -63,7 +60,7 @@ class weatherDataManager {
                        wh?.execute(stringBuilder.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 1){
+                   else if(Const.SWITCH_CASE == 1){
                         val stringBuilder1 =
                             _weatherResponse.result[1].day + "\n" +
                                     _weatherResponse?.city +
@@ -74,7 +71,7 @@ class weatherDataManager {
                         wh?.execute(stringBuilder1.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 2){
+                   else if(Const.SWITCH_CASE == 2){
                         val stringBuilder2 =
                             _weatherResponse.result[2].day + "\n" +
                                     _weatherResponse?.city +
@@ -85,7 +82,7 @@ class weatherDataManager {
                         wh?.execute(stringBuilder2.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 3){
+                   else if(Const.SWITCH_CASE == 3){
                         val stringBuilder3 =
                             _weatherResponse.result[3].day + "\n" +
                                     _weatherResponse?.city +
@@ -96,7 +93,7 @@ class weatherDataManager {
                         wh?.execute(stringBuilder3.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 4){
+                   else if(Const.SWITCH_CASE == 4){
                         val stringBuilder4 =
                             _weatherResponse.result[4].day + "\n" +
                                     _weatherResponse?.city +
@@ -107,7 +104,7 @@ class weatherDataManager {
                         wh?.execute(stringBuilder4.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 5){
+                    else if(Const.SWITCH_CASE == 5){
                         val stringBuilder5 =
                             _weatherResponse.result[5].day + "\n" +
                                     _weatherResponse?.city +
@@ -118,7 +115,7 @@ class weatherDataManager {
                         wh?.execute(stringBuilder5.toString())
 
                     }
-                    if(Const.SWITCH_CASE == 6){
+                   else if(Const.SWITCH_CASE == 6){
                         val stringBuilder6 =
                             _weatherResponse.result[6].day + "\n" +
                                     _weatherResponse?.city +
