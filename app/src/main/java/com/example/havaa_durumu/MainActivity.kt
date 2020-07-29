@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         Const.initClass()
         rView = findViewById(R.id.rView)
         callCities()
-       
+
         Toast.makeText(applicationContext, "App started!", Toast.LENGTH_SHORT).show()
 
         rView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

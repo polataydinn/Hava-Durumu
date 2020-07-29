@@ -71,4 +71,6 @@ dependencies {
     def cardview_version = "1.0.0"
     implementation "androidx.cardview:cardview:$cardview_version"
 
+    implementation 'com.airbnb.android:lottie:3.4.1'
+
 }
