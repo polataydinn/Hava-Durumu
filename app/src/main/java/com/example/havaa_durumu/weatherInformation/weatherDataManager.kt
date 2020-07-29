@@ -46,12 +46,14 @@ class weatherDataManager {
                 Const.DAYS_OF_WEEK5 = response.body()!!.result[5].day
                 Const.DAYS_OF_WEEK6 = response.body()!!.result[6].day
 
+
+
                 if (response.code() == 200) {
                     val _weatherResponse = response.body()!!
 
                     if(Const.SWITCH_CASE == 0){
                      val stringBuilder =
-                         "Bugün" + "\n" +
+                         _weatherResponse.result[0].day + "\n" +
                                  _weatherResponse?.city +
                                  "\n" +
                                  "Sıcaklık: " +

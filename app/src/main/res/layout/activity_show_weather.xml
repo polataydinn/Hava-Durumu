@@ -31,11 +31,12 @@
         app:layout_constraintVertical_bias="0.06"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
+
     <Button
         android:id="@+id/dButton1"
         android:layout_width="338dp"
         android:layout_height="45dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="52dp"
         android:onClick="DayChooseOnClick"
         android:tag="1"
         android:text="Bugün"
@@ -45,93 +46,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:tag="2"
-        android:id="@+id/dButton2"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton1" />
-
-    <Button
-        android:tag="3"
-        android:id="@+id/dButton3"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton2" />
-
-    <Button
-        android:tag="4"
-        android:id="@+id/dButton4"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton3" />
-
-    <Button
-        android:tag="5"
-        android:id="@+id/dButton5"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton4" />
-
-    <Button
-        android:tag="6"
-        android:id="@+id/dButton7"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton6" />
-
-    <Button
-        android:tag="7"
-        android:id="@+id/dButton6"
-        android:onClick="DayChooseOnClick"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:text="Loading..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dButton5" />
-
-    <Button
         android:id="@+id/mapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="harita"
         app:layout_constraintBottom_toTopOf="@+id/dButton1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.721"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.289" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

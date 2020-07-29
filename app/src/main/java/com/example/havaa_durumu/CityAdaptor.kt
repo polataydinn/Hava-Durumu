@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.havadurumuv10.sehirisimleri.Cities
+import kotlinx.android.synthetic.main.activity_bottom_sheet.*
 
 
 class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
@@ -42,10 +43,12 @@ class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :
 
                 Log.d("CEVAP ", "selam ben " + tView.text.toString())
 
+
                 Const.CURRENT_CITY = tView.text.toString()
                 Const.SWITCH_CASE = 0
                 Const.LATITUTE = this.mLat!!
                 Const.LONGITUTE= this.mLon!!
+
 
                 val intent = Intent(mContext,show_weather::class.java)
                 startActivity(mContext!!,intent,null)

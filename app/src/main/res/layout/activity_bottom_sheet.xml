@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:tag="1"
+        android:id="@+id/dButton"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Pazartesi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton1" />
+
+    <Button
+        android:tag="2"
+        android:id="@+id/dButton2"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Salı"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton1" />
+
+    <Button
+        android:tag="3"
+        android:id="@+id/dButton3"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Çarşamba"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton2" />
+
+    <Button
+        android:tag="4"
+        android:id="@+id/dButton4"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Perşembe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton3" />
+
+    <Button
+        android:tag="5"
+        android:id="@+id/dButton5"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Cuma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton4" />
+
+    <Button
+        android:tag="6"
+        android:id="@+id/dButton7"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Cumartesi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton6" />
+
+    <Button
+        android:tag="7"
+        android:id="@+id/dButton6"
+        android:onClick="DayChooseOnClick"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:text="Pazar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dButton5" />
+
+
+</LinearLayout>
