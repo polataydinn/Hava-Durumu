@@ -36,7 +36,7 @@
         android:id="@+id/dButton1"
         android:layout_width="338dp"
         android:layout_height="45dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="68dp"
         android:onClick="DayChooseOnClick"
         android:tag="1"
         android:text="Günler"
@@ -44,6 +44,19 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_layer_name"
+        android:layout_width="410dp"
+        android:layout_height="481dp"
+        android:layout_marginTop="468dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/lottie" />
 
     <Button
         android:id="@+id/mapButton"

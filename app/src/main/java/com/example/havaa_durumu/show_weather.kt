@@ -41,7 +41,6 @@ class show_weather : AppCompatActivity() {
             view.bottomSheetClose.setOnClickListener {
                 dialog.dismiss()
             }
-
         }
         mapButton.setOnClickListener{
             val intent = Intent(this,MapActivity::class.java)
@@ -53,16 +52,12 @@ class show_weather : AppCompatActivity() {
     fun getDataStart(){
         var dm  = weatherDataManager()
         dm.setWeatherListener(object : WeatherListener {
-
             override fun execute(data: String) {
-
                 findViewById<TextView>(R.id.textView).setText(data)
                 Glide.with(this@show_weather)
                     .load(Const.STATUS_MAP.get(Const.CURRENT_STATUS))
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .into(wimg1)
-
-
             }
         })
 
@@ -73,14 +68,11 @@ class show_weather : AppCompatActivity() {
         dm.setWeatherListener(object : WeatherListener {
 
             override fun execute(data: String) {
-
                 findViewById<TextView>(R.id.textView).setText(data)
-
                 Glide.with(this@show_weather)
                     .load(Const.STATUS_MAP.get(Const.CURRENT_STATUS))
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .into(wimg1)
-
             }
         })
 
@@ -91,6 +83,4 @@ class show_weather : AppCompatActivity() {
         Const.SWITCH_CASE = view.tag.toString().toInt() -1
         getDataClone()
     }
-
-
 }
