@@ -5,12 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:layout_gravity="end"
-        android:id="@+id/bottomSheetClose"></ImageButton>
     <Button
         android:id="@+id/dButton"
         android:layout_width="match_parent"
