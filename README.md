@@ -3,7 +3,7 @@ Hava Durumu Mobil Aplikasyon
 
 Main activity'de il listesini internetten çekip recycler view sayesinde, maximum ram optimizasyonuyla ekranda listeleniyor.
 
-Seçilen ilin 1 haftalık günce hava durumu verisini yine internetten çekip gerekli değerler ekranda gösteriliyor.
+Seçilen ilin 1 haftalık güncel hava durumu verisini yine internetten çekip gerekli değerler ekranda gösteriliyor.
 
 Son olarak haritada göster özelliği ile seçili ilin haritadaki konumunu bulup, bir mark koyarak bu mark üzerinde ise o ilin güncel sıcaklığı bulunmakta.
 
