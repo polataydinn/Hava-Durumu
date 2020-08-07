@@ -10,8 +10,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.havadurumuv10.sehirisimleri.Cities
-import kotlinx.android.synthetic.main.activity_bottom_sheet.*
 
 
 class CityAdaptor(cityList: ArrayList<CitiesResponse.Item>) :

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "583389362798",
+    "firebase_url": "https://crashdemo-1835c.firebaseio.com",
+    "project_id": "crashdemo-1835c",
+    "storage_bucket": "crashdemo-1835c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583389362798:android:c1f785aff99f71a51c447f",
+        "android_client_info": {
+          "package_name": "com.example.havadurumuv10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583389362798-jsn82fhhgsnp99cj18v9l1f8ptu2cc83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwYbfo5bprFpmno6PZs4tNg6HCjvi4-MQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583389362798-jsn82fhhgsnp99cj18v9l1f8ptu2cc83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

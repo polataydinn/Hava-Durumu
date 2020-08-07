@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.havaa_durumu.iml.WeatherListener
 import com.example.havadurumuv10.havadurumubilgisi.weatherDataManager
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.activity_bottom_sheet.*
 import kotlinx.android.synthetic.main.activity_bottom_sheet.view.*
 import kotlinx.android.synthetic.main.activity_show_weather.*
 
